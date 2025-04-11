@@ -159,7 +159,7 @@ def scatter(points, ax=None, permutation=None, colorbar=False, colormap=None,
 
 def fill(points, ax=None, **kwargs):
     """
-    Analogous to maplotlib.fill. Plots and fills a polygon with tuples.
+    Analogous to maplotlib.fill. Minimum of three tuples to plot a polygon
     Parameters
     ----------
     points: List of 3-tuples
@@ -171,7 +171,8 @@ def fill(points, ax=None, **kwargs):
     """
     # if not ax:
     #     fig, ax = plt.subplots()
+    # x = points[:, 0]
+    # y = points[:, 1]
     xs, ys = project_sequence(points)
     ax.fill(xs, ys, **kwargs)
-
     return ax
