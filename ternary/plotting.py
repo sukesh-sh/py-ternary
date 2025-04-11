@@ -156,3 +156,22 @@ def scatter(points, ax=None, permutation=None, colorbar=False, colormap=None,
                           cbarlabel=cbarlabel)
 
     return ax
+
+def fill(points, ax=None, **kwargs):
+    """
+    Analogous to maplotlib.fill. Plots and fills a polygon with tuples.
+    Parameters
+    ----------
+    points: List of 3-tuples
+        The list of tuples to be plotted as a polygon.
+    ax: Matplotlib AxesSubplot, None
+        The subplot to draw on.
+    kwargs:
+        Any kwargs to pass through to matplotlib.
+    """
+    # if not ax:
+    #     fig, ax = plt.subplots()
+    xs, ys = project_sequence(points)
+    ax.fill(xs, ys, **kwargs)
+
+    return ax

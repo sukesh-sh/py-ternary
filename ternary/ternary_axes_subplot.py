@@ -479,3 +479,8 @@ class TernaryAxesSubplot(object):
 
         # Draw the background
         self._background_triangle = heatmapping.background_color(ax, color, scale, alpha=alpha, zorder=zorder)[0]
+
+def fill(self, points, **kwargs):
+    ax = self.get_axes()
+    # permutation = self._permutation
+    plotting.fill(points, ax=ax, **kwargs)
